@@ -26,6 +26,7 @@ function SearchMovies(){
 	},[keyword]);
 
 	const searchMovie = async algo => {
+		console.log(inputTag.current.value);
 		algo.preventDefault();
 		const inputValue = inputTag.current.value;
 		setKeyword(inputValue);
@@ -43,9 +44,9 @@ function SearchMovies(){
 							<form method="GET">
 								<div className="form-group">
 									<label htmlFor="">Buscar por título:</label>
-									<input type="text" className="form-control" />
+									<input type="text" ref={inputTag} className="form-control" />
 								</div>
-								<button className="btn btn-info">Search</button>
+								<button className="btn btn-info" onClick={searchMovie}>Search</button>
 							</form>
 						</div>
 					</div>
